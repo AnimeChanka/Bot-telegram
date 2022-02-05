@@ -57,6 +57,14 @@ bot.command('coinflip', (ctx) => {
 
 // rps
 
+bot.command('onetime', (ctx) =>
+  ctx.reply('Кнопка появилась возле значка скрепки', Markup
+    .keyboard(['/scissors', '/rock', '/paper'])
+    .oneTime()
+    .resize()
+  )
+)
+
 bot.command('scissors', (ctx) => {
     let a1 = "Камень"
     let a2 = "Ножницы"
@@ -119,12 +127,20 @@ else if (a4 == "Ножницы" ){
 else {
     ctx.reply("Ничья!")
 }
-  
-
-
 })
 
+
+
 //rps
+
+//help
+
+bot.command('help', (ctx) => {
+    ctx.reply("Я могу выполнять эти команды: /quiz; /nggyu; /roll; /coinflip; /8ball; /help  \n Для игры 'Камень, Ножницы, Бумага:' \n Введите команду '/onetime' и в появшейся кнопке выбирайте камень, ножницы или бумагу ")
+   
+})
+
+//help
 
 //roll
 
@@ -145,6 +161,45 @@ bot.command('roll', (ctx) => {
 })
 
 //roll
+
+//start
+
+bot.command('start', (ctx) => {
+    ctx.reply("Я могу выполнять эти команды: /quiz; /nggyu; /roll; /coinflip; /8ball; /help  \n Для игры 'Камень, Ножницы, Бумага:' \n Введите команду '/onetime' и в появшейся кнопке выбирайте камень, ножницы или бумагу ")
+   
+})
+
+
+//start
+
+
+
+
+//never gonna give you up
+
+bot.command('nggyu', (ctx) => {
+    ctx.reply("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+   
+})
+
+//never gonna give you up
+
+
+//say
+
+bot.command('quiz', (ctx) =>
+  ctx.replyWithQuiz(
+    'Сколько баллов получит мой создатель?',
+    ['12 баллов', '12 баллов'],
+    { correct_option_id: 0 }
+  )
+)
+
+//say
+
+
+
+
 
 bot.launch()
 
